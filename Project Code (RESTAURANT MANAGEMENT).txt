@@ -1,0 +1,627 @@
+#!/bin/sh
+
+echo "=======================WELCOME TO OUR RESTAURANT============================="
+echo "                 ================ MENU =====================                 "
+
+echo "--------------------------------------------------------------------=--------------------------------------------------------------"
+echo "| ** |     ITEM     |     SIZE                          |         TYPE                                           |    PRICE        |"
+echo "-----------------------------------------------------------------------------------------------------------------------------------"
+echo "| 1  | Burger       | 200/300gm                         | Fire Bird, Beef Cheese, Smoky BBQ                      | Rs399/RS599     |"
+echo "-----------------------------------------------------------------------------------------------------------------------------------"
+echo "| 2  | Pizza        | 10inch /13inch                    | Margherita, Phantom, Arabic Ranch                      | Rs900/RS1600    |"
+echo "-----------------------------------------------------------------------------------------------------------------------------------"
+echo "| 3  | French fries | Small/Large                       | Mayo, Garlic, Cheese                                   | Rs150/Rs300     |"
+echo "-----------------------------------------------------------------------------------------------------------------------------------"
+echo "| 4  | Chinese      | Half/Full                         | Chicken Shashlik, Chicken Manchurian, King Pao Chicken | Rs700/RS999     |"
+echo "-----------------------------------------------------------------------------------------------------------------------------------"
+echo "| 5  | Rice         | Half/Full                         | Chicken Biryani, Chicken Pulao, Beef Pulao             | Rs450/RS650     |"
+echo "-----------------------------------------------------------------------------------------------------------------------------------"
+echo "| 6  | Steak        | 1inch thickness/1.5inch thickness | Tangy Chicken, Stacker Steak Beef,Chicken Tarragon     | Rs2000/Rs3000   |"
+echo "-----------------------------------------------------------------------------------------------------------------------------------"
+echo "| 7  | Pasta        | 200gm/400gm                       | Fettuccine Alfredo, Penne, Neapolitan                  | Rs550/Rs700     |"
+echo "-----------------------------------------------------------------------------------------------------------------------------------"
+echo "| 8  | Dessert      | Slice/Full                        | Lotus Cheese Cake, Cosmos, Molten Lava Cake            | Rs640/RS800     |"
+echo "-----------------------------------------------------------------------------------------------------------------------------------"
+echo "| 9  | Soft Drinks  | 350ml/500ml/1litre                | Pepsi,7Up,Dew                                          | Rs70/Rs100/RS200|"
+echo "---------------------------------------------- ------------------------------------------------------------------------------------"
+echo "| 10 | Smoothie     | 350ml/500ml                       | Pina Colada,Angel Mist,Peachy Keen                     | Rs295/Rs395     |"
+echo "-----------------------------------------------------------------------------------------------------------------------------------"
+echo "| 11 | Shakes       | 200ml/400ml                       | Chocolate, Oreo Vanilla, KitKat                        | Rs250/Rs500     |"
+echo "-----------------------------------------------------------------------------------------------------------------------------------"
+
+echo "Which Item Do You Want To Order? or enter 12 for Deals"
+
+read choice
+
+if(($choice == 1))					//$ is used for calling a variable
+then
+echo "Which size of Burger do you want?\n"
+echo "1) 200gram , 2) 300gram"
+read burger_size
+echo "Which Burger do you want?"
+echo "1)Fire Bird 2)Beef Cheese 3)Smoky BBQ"
+read burger_type
+	if(($burger_size == 1))
+	then
+	echo "How many Burgers do you want\n"
+	read burger_quantity
+	price=`expr $burger_quantity \* 399`		//expr is used in Arithmetic Operator
+	
+	elif(($burger_size == 2))
+	then 
+	echo "How many Burgers do you want?"
+	read burger_quantity
+	price=`expr $burger_quantity \* 599`
+	fi
+elif ((choice == 2))
+then
+echo "Which size of Pizza do you want?"
+echo "1) 10inch  2) 13inch"
+read pizza_size
+echo "Which Flavour Pizza do you want?"
+echo "1)Margherita 2)Phantom 3)Arabic Ranch"
+read pizza_flav
+	if (($pizza_size == 1))
+	then
+	echo "How many Pizza do you want"
+	read pizza_q
+	price=`expr $pizza_q \* 900`
+	
+	elif (($pizza_size == 2))
+	then
+	echo "How many Pizza do you want"
+	read pizza_q
+	price=`expr $pizza_q \* 1600`
+	fi
+	
+elif ((choice == 3))
+then
+echo "Which size of Fries do you want?"
+echo "1) Small  2) Large"
+read fries_size
+echo "Which Flavour of Fries do you want?"
+echo "1)Mayo 2)Garlic 3)Cheese"
+read fries_flav
+if (($fries_size == 1))
+	then
+	echo "How many plates of french fries do you want?"
+	read ff_q
+	price=`expr $ff_q \* 150`
+	
+	elif (($fries_size == 2))
+	then
+	echo "How many plates of french fries do you want?"
+	read ff_q
+	price=`expr $ff_q \* 300`
+	fi
+	
+elif ((choice == 4))
+then
+echo "Which size of Chinese do you want?"
+echo "1) Half  2) Full"
+read chinese_size
+echo "Which Chinese dish do you want?"
+echo "1)Chicken Shashlik 2)Chicken Manchurian 3)King Pao Chicken"
+read chinese_dish
+if (($chinese_size == 1))
+	then
+	echo "How many plates of Chinese do you want?"
+	read chinese_q
+	price=`expr $chinese_q \* 700`
+	
+	elif (($chinese_size == 2))
+	then
+	echo "How many plates of Chinese do you want?"
+	read chinese_q
+	price=`expr $chinese_q \* 999`
+	fi
+	
+elif ((choice == 5))
+then
+echo "Which size of Rice do you want?"
+echo "1) Half  2) Full"
+read rice_size
+echo "Which type of rice do you want?"
+echo "1)Chicken Biryani 2)Chicken Pulao 3)Beef Pulao"
+read rice_dish
+if (($rice_size == 1))
+	then
+	echo "How many plates of Rice do you want?"
+	read rice_q
+	price=`expr $rice_q \* 450`
+	
+	elif (($rice_size == 2))
+	then
+	echo "How many plates of Rice do you want?"
+	read rice_q
+	price=`expr $rice_q \* 650`
+	fi
+	
+elif ((choice == 6))
+then
+echo "Which size of Steak do you want?"
+echo "1)1inch thickness 2)1.5inch thickness"
+read steak_size
+echo "Which type of Steak do you want?"
+echo "1)Tangy Chicken 2)Stacker Steak Beef 3)Chicken Tarragon"
+read steak_dish
+if (($steak_size == 1))
+	then
+	echo "How many Steakes do you want?"
+	read steak_q
+	price=`expr $steak_q \* 2000`
+	
+	elif (($steak_size == 2))
+	then
+	echo "How many Steakes do you want?"
+	read steak_q
+	price=`expr $steak_q \* 3000`
+	fi
+	
+elif ((choice == 7))
+then
+echo "Which size of Pasta do you want?"
+echo "1)200gram 2)400gram"
+read pasta_size
+echo "Which type of Pasta do you want?"
+echo "1)Fettuccine Alfredo 2)Penne 3)Neapolitan"
+read pasta_dish
+if (($pasta_size == 1))
+	then
+	echo "How many plates of pasta do you want?"
+	read pasta_q
+	price=`expr $pasta_q \* 550`
+	
+	elif (($pasta_size == 2))
+	then
+	echo "How many plates of Pasta do you want?"
+	read pasta_q
+	price=`expr $pasta_q \* 700`
+	fi
+	
+elif ((choice == 8))
+then
+echo "Which size of Dessert do you want?"
+echo "1)Slice 2)Full"
+read dessert_size
+echo "Which Dessert do you want?"
+echo "1)Lotus Cheese Cake 2)Cosmos 3)Molten Lava Cake"
+read dessert_dish
+if (($dessert_size == 1))
+	then
+	echo "How many Desserts do you want?"
+	read dessert_q
+	price=`expr $dessert_q \* 640`
+			
+	elif (($dessert_size == 2))
+	then
+	echo "How many Desserts do you want?"
+	read dessert_q
+	price=`expr $dessert_q \* 800`
+	fi
+
+elif ((choice == 9))
+then
+echo "Which size of Soft Drink do you want?"
+echo "1) 350ml 2) 500ml 3) 1litre"
+read coke_size
+echo "Which Soft Drink do you want?"
+echo "1)Pepsi 2)7UP 3)Dew"
+read drink_type
+	if (($coke_size == 1))
+	then
+	echo "HOw many Soft Drinks do you want"
+	read coke_q
+	price=`expr $coke_q \* 70`
+	
+	elif (($coke_size == 2))
+	then
+	echo "HOw many Soft Drinks do you want"
+	read coke_q
+	price=`expr $coke_q \* 100`
+	
+	elif (($coke_size == 3))
+	then
+	echo "How many Soft Drinks do you want"
+	read coke_q
+	price=`expr $coke_q \* 200`
+	fi
+
+elif ((choice == 10))
+then
+echo "Which size of Smoothie do you want?"
+echo "1)350ml 2)500ml"
+read smoothie_size
+echo "Which Smoothie do you want?"
+echo "1)Pina Colada 2)Angel Mist 3)Peachy Keen"
+read smoothie_dish
+if (($smoothie_size == 1))
+	then
+	echo "How many Smoothies do you want?"
+	read smoothie_q
+	price=`expr $smoothie_q \* 295`
+			
+	elif (($smoothie_size == 2))
+	then
+	echo "How many Smoothies do you want?"
+	read smoothie_q
+	price=`expr $smoothie_q \* 395`
+	fi
+	
+elif ((choice == 11))
+then
+echo "Which size of Shake do you want?"
+echo "1)200ml 2)400ml"
+read shake_size
+echo "Which Shake do you want?"
+echo "1)Chocolate 2)Oreo Vanilla 3)KitKat"
+read shake_dish
+if (($shake_size == 1))
+	then
+	echo "How many Shakes do you want?"
+	read shake_q
+	price=`expr $shake_q \* 250`
+			
+	elif (($shake_size == 2))
+	then
+	echo "How many Shakes do you want?"
+	read shake_q
+	price=`expr $shake_q \* 500`
+	fi
+
+elif ((choice == 12))
+then
+echo "------------------------------------------------------------------------"
+echo "|Deal#1 | 2 Burgers, 1 Pizza, Fries, 1 350ml Pepsi           | Rs1200  |"
+echo "|-----------------------------------------------------------------------"
+echo "|Deal#2 | 2 Pizza, 1 Pasta, 1  Dessert, 1 Smoothie           | Rs2500  |"
+echo "|-----------------------------------------------------------------------"
+echo "|Deal#3 | 4 Zinger Burger, 2 Pizza, 1 Litre Pepsi, 1 Dessert | Rs4000  |"
+echo "------------------------------------------------------------------------"
+read deal
+	if (($deal == 1))
+	then
+	echo "You have ordered Deal#1"
+	price=1200
+	
+	elif (($deal == 2))
+	then
+	echo "You have ordered Deal#2"
+	price=2500
+	
+	elif (($deal == 3))
+	then
+	echo "You have ordered Deal#3"
+	price=4000
+	fi
+fi
+
+echo "Do you want to order 1 more Item?"
+echo "1)Yes 2)No"
+read order_choice2
+
+if ((order_choice2 == 1))
+then 
+echo "What do you want as second Item? Or enter 12 for deals"
+
+read choice
+		if(($choice == 1))
+		then
+		echo "Which size of Burger do you want?\n"
+		echo "1) 200gram , 2) 300gram"
+		read burger_size 
+		echo "Which Burger do you want?"
+		echo "1)Fire Bird 2)Beef Cheese 3)Smoky BBQ"
+		read burger_type
+			if(($burger_size == 1))
+			then
+			echo "How many Burgers do you want\n"
+			read burger_quantity
+			price2=`expr $burger_quantity \* 399`
+			
+			elif(($burger_size == 2))
+			then 
+			echo "How many Buugers do you want?"
+			read burger_quantity
+			price2=`expr $burger_quantity \* 599`
+			fi
+		elif ((choice == 2))
+		then
+		echo "Which size of Pizza do you want?"
+		echo "1) 10inch  2) 13inch"
+		read pizza_size
+		echo "Which Flavour Pizza do you want?"
+		echo "1)Margherita 2)Phantom 3)Arabic Ranch"
+		read pizza_flav
+			if (($pizza_size == 1))
+			then
+			echo "How many Pizza do you want"
+			read pizza_q
+			price2=`expr $pizza_q \* 900`
+			
+			elif (($pizza_size == 2))
+			then
+			echo "How many Pizza do you want"
+			read pizza_q
+			price2=`expr $pizza_q \* 1600`
+			fi
+			
+		elif ((choice == 3))
+		then
+		echo "How many plates of french fries do you want?"
+		read ff_q
+		echo "Which size of Fries do you want?"
+		echo "1) Small  2) Large"
+		read fries_size
+		echo "Which Flavour of Fries do you want?"
+		echo "1)Mayo 2)Garlic 3)Cheese"
+		read fries_flav
+		if (($fries_size == 1))
+			then
+			echo "How many Pizza do you want"
+			read pizza_q
+			price2=`expr $ff_q \* 150`
+			
+			elif (($fries_size == 2))
+			then
+			echo "How many Pizza do you want"
+			read pizza_q
+			price2=`expr $ff_q \* 300`
+			fi
+			
+		elif ((choice == 4))
+		then
+		echo "Which size of Chinese do you want?"
+		echo "1) Half  2) Full"
+		read chinese_size
+		echo "Which Chinese dish do you want?"
+		echo "1)Chicken Shashlik 2)Chicken Manchurian 3)King Pao Chicken"
+		read chinese_dish
+		if (($chinese_size == 1))
+			then
+			echo "How many plates of Chinese do you want?"
+			read chinese_q
+			price2=`expr $chinese_q \* 700`
+			
+			elif (($chinese_size == 2))
+			then
+			echo "How many plates of Chinese do you want?"
+			read chinese_q
+			price2=`expr $chinese_q \* 999`
+			fi
+		
+		elif ((choice == 5))
+		then
+		echo "Which size of Rice do you want?"
+		echo "1) Half  2) Full"
+		read rice_size
+		echo "Which type of rice do you want?"
+		echo "1)Chicken Biryani 2)Chicken Pulao 3)Beef Pulao"
+		read rice_dish
+		if (($rice_size == 1))
+			then
+			echo "How many plates of Rice do you want?"
+			read rice_q
+			price2=`expr $rice_q \* 450`
+			
+			elif (($rice_size == 2))
+			then
+			echo "How many plates of Rice do you want?"
+			read rice_q
+			price2=`expr $rice_q \* 650`
+			fi
+			
+		elif ((choice == 6))
+		then
+		echo "Which size of Steak do you want?"
+		echo "1)1inch thickness 2)1.5inch thickness"
+		read steak_size
+		echo "Which type of Steak do you want?"
+		echo "1)Tangy Chicken 2)Stacker Steak Beef 3)Chicken Tarragon"
+		read steak_dish
+		if (($steak_size == 1))
+			then
+			echo "How many Steakes do you want?"
+			read steak_q
+			price2=`expr $steak_q \* 2000`
+			
+			elif (($steak_size == 2))
+			then
+			echo "How many Steakes do you want?"
+			read steak_q
+			price2=`expr $steak_q \* 3000`
+			fi
+		
+		elif ((choice == 7))
+		then
+		echo "Which size of Pasta do you want?"
+		echo "1)200gram 2)400gram"
+		read pasta_size
+		echo "Which type of Pasta do you want?"
+		echo "1)Fettuccine Alfredo 2)Penne 3)Neapolitan"
+		read pasta_dish
+		if (($pasta_size == 1))
+			then
+			echo "How many plates of pasta do you want?"
+			read pasta_q
+			price2=`expr $pasta_q \* 550`
+			
+			elif (($pasta_size == 2))
+			then
+			echo "How many plates of Pasta do you want?"
+			read pasta_q
+			price2=`expr $pasta_q \* 700`
+			fi
+			
+		elif ((choice == 8))
+		then
+		echo "Which size of Dessert do you want?"
+		echo "1)Slice 2)Full"
+		read dessert_size
+		echo "Which Dessert do you want?"
+		echo "1)Lotus Cheese Cake 2)Cosmos 3)Molten Lava Cake"
+		read dessert_dish
+		if (($dessert_size == 1))
+			then
+			echo "How many Desserts do you want?"
+			read dessert_q
+			price2=`expr $dessert_q \* 640`
+			
+			elif (($dessert_size == 2))
+			then
+			echo "How many Desserts do you want?"
+			read dessert_q
+			price3=`expr $dessert_q \* 800`
+			fi
+		
+		elif ((choice == 9))
+		then
+		echo "Which size of Soft Drink do you want?"
+		echo "1) 350ml 2) 500ml 3) 1litre"
+		read coke_size
+		echo "Which Soft Drink do you want?"
+		echo "1)Pepsi 2)7UP 3)Dew"
+		read drink_type
+			if (($coke_size == 1))
+			then
+			echo "How many Soft Drinks do you want"
+			read coke_q
+			price2=`expr $coke_q \* 70`
+			
+			elif (($coke_size == 2))
+			then
+			echo "How many Soft Drinks do you want"
+			read coke_q
+			price2=`expr $coke_q \* 100`
+			
+			elif (($coke_size == 3))
+			then
+			echo "HOw many Soft Drinks do you want"
+			read coke_q
+			price2=`expr $coke_q \* 200`
+			fi
+		
+		elif ((choice == 10))
+		then
+		echo "Which size of Smoothie do you want?"
+		echo "1)350ml 2)500ml"
+		read smoothie_size
+		echo "Which Smoothie do you want?"
+		echo "1)Pina Colada 2)Angel Mist 3)Peachy Keen"
+		read smoothie_dish
+		if (($smoothie_size == 1))
+			then
+			echo "How many Smoothies do you want?"
+			read smoothie_q
+			price2=`expr $smoothie_q \* 295`
+					
+			elif (($smoothie_size == 2))
+			then
+			echo "How many Smoothies do you want?"
+			read smoothie_q
+			price2=`expr $smoothie_q \* 395`
+			fi
+		
+		elif ((choice == 11))
+		then
+		echo "Which size of Shake do you want?"
+		echo "1)200ml 2)400ml"
+		read shake_size
+		echo "Which Shake do you want?"
+		echo "1)Chocolate 2)Oreo Vanilla 3)KitKat"
+		read shake_dish
+		if (($shake_size == 1))
+			then
+			echo "How many Shakes do you want?"
+			read shake_q
+			price2=`expr $shake_q \* 250`
+					
+			elif (($shake_size == 2))
+			then
+			echo "How many Shakes do you want?"
+			read shake_q
+			price2=`expr $shake_q \* 500`
+			fi
+
+		elif ((choice == 12))
+		then
+		echo "-----------------------------------------------------------------------"
+		echo "|Deal#1 | 2 Burgers, 1 Pizza, Fries, 1 350ml Pepsi           | Rs1200 |"
+		echo "|----------------------------------------------------------------------"
+		echo "|Deal#2 | 2 Pizza, 1 Pasta, 1  Dessert, 1 Smoothie           | Rs2500 |"
+		echo "|----------------------------------------------------------------------"
+		echo "|Deal#3 | 4 Zinger Burger, 2 Pizza, 1 Litre Pepsi, 1 Dessert | Rs4000 |"
+		echo "-----------------------------------------------------------------------"
+		read deal
+			if (($deal == 1))
+			then
+			echo "You have ordered Deal#1"
+			price2=1200
+			
+			elif (($deal == 2))
+			then
+			echo "You have ordered Deal#2"
+			price2=2500
+			
+			elif (($deal == 3))
+			then
+			echo "You have ordered Deal#3"
+			price2=4000
+			fi
+
+		fi
+
+echo "Your Bill is: "$((price+price2))
+echo "Select your payment method"
+echo "1)Card 2)Cash"
+read payment_method
+if ((payment_method == 1))
+then 
+echo "Enter Your Credit Card Number"
+read card
+echo "Enter Your Card Pin"
+read pin
+echo "Your payment has been made through your card of Rs"$((price+price2))
+
+elif((payment_method == 2))
+then
+echo "Please pay the bill at the counter and wait for collecting the food"
+echo "Thank You For Purchasing Food From Our Restaurant :)"
+fi
+
+echo "Thank You For Purchasing Food From Our Restaurant :)"
+
+elif ((order_choice2 == 2))
+then
+echo "Your Total Bill is: "$price
+echo "Select your payment method"
+echo "1)Card 2)Cash"
+read payment_method
+	if ((payment_method == 1))
+	then 
+	echo "Enter Your Credit Card Number"
+	read card
+	echo "Enter Your Card Pin"
+	read  pin
+	echo "Your payment has been made through your card of Rs"$price
+	echo "Thank You For Purchasing Food From Our Restaurant :)"
+	
+	elif((payment_method == 2))
+	then
+	echo "Please pay the bill at the counter and wait for collecting the food"
+	echo "Thank You For Purchasing Food From Our Restaurant :)"
+	echo shake_dish;
+	fi
+
+fi
+
+
+
+
+
+
+
+
+
+
+
